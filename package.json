@@ -11,5 +11,8 @@
     "url": ".git"
   },
   "author": "Omatsola Isaac Sobotie",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
