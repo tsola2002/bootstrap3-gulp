@@ -1,6 +1,7 @@
 //use nodejs's require command to bring in gulp library & assign it to a variable called gulp
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    browserify = require('gulp-browserify'),
     concat = require('gulp-concat');
 
 //javascript files that need to be combined
@@ -32,6 +33,8 @@ gulp.task('combine-js', function() {
         //concatenate js file into a script.js file
         //pipe method will send output of previous function to the function below
         .pipe(concat('bootstrap.js'))
+        //run the browserify plugin & install dependencies
+        .pipe(browserify())
         //output final file to destination folder
         .pipe(gulp.dest('builds/development/js'))
 });
