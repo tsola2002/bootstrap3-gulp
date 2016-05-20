@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
+    minifyHTML = require('gulp-minify-html'),
     less = require('gulp-less');
 
 //making declaration of neccessary variables that will be used later on
@@ -92,7 +93,7 @@ gulp.task('watch', function() {
     //when any file with a .less extension changes, we run the less task
     gulp.watch('components/less/*.less', ['less']);
     //when any html file changes do a livereload
-    gulp.watch(htmlSources, ['html']);
+    gulp.watch('builds/development/*.html', ['html']);
 });
 
 
@@ -109,7 +110,11 @@ gulp.task('connect', function() {
 
 gulp.task('html', function() {
     //set input sources to html files
-    gulp.src(htmlSources)
+    gulp.src('builds/development/*.html')
+        //if the environment is production then minify the html
+        .pipe(gulpif(env === 'production', minifyHTML()))
+        //send the minified html files to production folder
+        .pipe(gulpif(env === 'production', gulp.dest(outputDir)))
         //pipe the sources to livereload
         .pipe(connect.reload())
 });
