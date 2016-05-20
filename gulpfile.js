@@ -6,9 +6,25 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     less = require('gulp-less');
 
-//javascript files that need to be combined
+//making declaration of neccessary variables that will be used later on
+var env,
+    jsSources,
+    lessSources,
+    htmlSources,
+    outputDir;
 
-var jsSources = [
+//check to see that environment variables is set, if not set it to development environment
+var env = process.env.NODE_ENV || 'development';
+
+//using a conditional to modify how the output is used
+ if (env==='development')  {
+     outputDir = 'builds/development/';
+ } else {
+     outputDir = 'builds/production/';
+ }
+
+//javascript files that need to be combined
+jsSources = [
     'components/js/jquery.js',
     'components/js/affix.js',
     'components/js/alert.js',
@@ -26,11 +42,11 @@ var jsSources = [
 
 //less files that need to be processed
 
-var lessSources = ['components/less/bootstrap.less'];
+lessSources = ['components/less/bootstrap.less'];
 
 //html files that need to be processed
 
-var htmlSources = ['builds/development/*.html'];
+htmlSources = [outputDir + '*.html'];
 
 gulp.task('less', function(){
     //specify where less files are located
@@ -39,7 +55,7 @@ gulp.task('less', function(){
         //spit log message if there are any errors
         .on('error', gutil.log)
         //output final file to destination folder
-        .pipe(gulp.dest('builds/development/css'))
+        .pipe(gulp.dest(outputDir + 'css'))
         //do a reload on the server
         .pipe(connect.reload())
 });
@@ -59,7 +75,7 @@ gulp.task('combine-js', function() {
         //run the browserify plugin & install dependencies
         .pipe(browserify())
         //output final file to destination folder
-        .pipe(gulp.dest('builds/development/js'))
+        .pipe(gulp.dest(outputDir + 'js'))
         //do a reload on the server
         .pipe(connect.reload())
 });
@@ -75,11 +91,13 @@ gulp.task('watch', function() {
     gulp.watch(htmlSources, ['html']);
 });
 
+
+
 gulp.task('connect', function() {
     //use connect variable's of the server method to create a server
     connect.server({
         //specify the root of your application
-        root: 'builds/development/',
+        root: outputDir,
         //turn on livereload feature
         livereload: true
     });
