@@ -4,6 +4,8 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect'),
+    gulpif = require('gulp-if'),
+    uglify = require('gulp-uglify'),
     less = require('gulp-less');
 
 //making declaration of neccessary variables that will be used later on
@@ -74,6 +76,8 @@ gulp.task('combine-js', function() {
         .pipe(concat('bootstrap.js'))
         //run the browserify plugin & install dependencies
         .pipe(browserify())
+        //use conditional to determine whether to minify the file or not based on the environment settings
+        .pipe(gulpif(env === 'production', uglify()))
         //output final file to destination folder
         .pipe(gulp.dest(outputDir + 'js'))
         //do a reload on the server
