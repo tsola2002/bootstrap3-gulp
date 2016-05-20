@@ -7,6 +7,8 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
     minifyHTML = require('gulp-minify-html'),
+    imagemin = require('gulp-imagemin'),
+    pngcrush = require('pngcrush'),
     less = require('gulp-less');
 
 //making declaration of neccessary variables that will be used later on
@@ -94,6 +96,8 @@ gulp.task('watch', function() {
     gulp.watch('components/less/*.less', ['less']);
     //when any html file changes do a livereload
     gulp.watch('builds/development/*.html', ['html']);
+    //when any html file changes do a livereload
+    gulp.watch('builds/development/images/**/*.*', ['images']);
 });
 
 
@@ -119,9 +123,25 @@ gulp.task('html', function() {
         .pipe(connect.reload())
 });
 
+gulp.task('images', function() {
+    //set input files to the folders in images folder & any folder with (.) in it
+    gulp.src('builds/development/images/**/*.*')
+        // if its in production run image minification
+        .pipe(gulpif(env === 'production', imagemin({
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            use: [pngcrush()]
+        })))
+        //if its in production send the minified images to their destination in production folder
+        .pipe(gulpif(env === 'production', gulp.dest(outputDir + 'images')))
+        .pipe(connect.reload())
+});
+
+
+
 
 
 
 
 //custom gulp task to run all tasks
-gulp.task('default', ['html', 'less', 'combine-js','log', 'connect', 'watch']);
+gulp.task('default', ['html', 'less', 'combine-js','log', 'images', 'connect', 'watch']);
