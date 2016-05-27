@@ -1,0 +1,7 @@
+body {
+  background-color: #3456f8;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex: auto;
+  flex: auto;
+}

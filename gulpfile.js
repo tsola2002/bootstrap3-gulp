@@ -9,6 +9,8 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     imagemin = require('gulp-imagemin'),
     pngcrush = require('pngcrush'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifyCSS = require('gulp-minify-css'),
     less = require('gulp-less');
 
 //making declaration of neccessary variables that will be used later on
@@ -45,9 +47,16 @@ jsSources = [
     'components/js/transition.js'
 ];
 
+customJsSources = [
+    'components/js/custom.js'
+];
+
 //less files that need to be processed
 
-lessSources = ['components/less/bootstrap.less'];
+lessSources = [
+    'components/less/bootstrap.less',
+    'components/less/custom.less'
+];
 
 //html files that need to be processed
 
@@ -56,10 +65,16 @@ htmlSources = [outputDir + '*.html'];
 gulp.task('less', function(){
     //specify where less files are located
     gulp.src(lessSources)
+        //convert the less files to css files
         .pipe(less())
         //spit log message if there are any errors
         .on('error', gutil.log)
-        //output final file to destination folder
+        //autoprefix the less files
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        //output final files to destination folder
         .pipe(gulp.dest(outputDir + 'css'))
         //do a reload on the server
         .pipe(connect.reload())
@@ -71,10 +86,20 @@ gulp.task('log', function(){
     gutil.log('Workflows are awesome');
 });
 
+gulp.task('process-js', function() {
+    //gather input sources to be concatenated
+    gulp.src(customJsSources)
+        .pipe(gulpif(env === 'production', uglify()))
+        //output final file to destination folder
+        .pipe(gulp.dest(outputDir + 'js'))
+        //do a reload on the server
+        .pipe(connect.reload())
+});
+
 gulp.task('combine-js', function() {
     //gather input sources to be concatenated
-    gulp.src(jsSources)
-        //concatenate js file into a script.js file
+    gulp.src(jsSources, customJsSources)
+        //concatenate js file into a bootstrap.js file
         //pipe method will send output of previous function to the function below
         .pipe(concat('bootstrap.js'))
         //run the browserify plugin & install dependencies
@@ -92,6 +117,8 @@ gulp.task('watch', function() {
     gulp.watch(lessSources, ['less']);
     //when any jsSources file changes run combine-js method
     gulp.watch(jsSources, ['combine-js']);
+    //when any customJsSources file changes run process-js method
+    gulp.watch(customJsSources, ['process-js']);
     //when any file with a .less extension changes, we run the less task
     gulp.watch('components/less/*.less', ['less']);
     //when any html file changes do a livereload
@@ -123,6 +150,17 @@ gulp.task('html', function() {
         .pipe(connect.reload())
 });
 
+gulp.task('minify-css', function() {
+    //set input sources to css files
+    gulp.src('builds/development/css/*.css')
+        //if the environment is production then minify the css
+        .pipe(gulpif(env === 'production', minifyCSS({keepSpecialComments: 1})))
+        //send the minified html files to production folder
+        .pipe(gulpif(env === 'production', gulp.dest(outputDir + 'css')))
+        //pipe the sources to livereload
+        .pipe(connect.reload())
+});
+
 gulp.task('images', function() {
     //set input files to the folders in images folder & any folder with (.) in it
     gulp.src('builds/development/images/**/*.*')
@@ -144,4 +182,4 @@ gulp.task('images', function() {
 
 
 //custom gulp task to run all tasks
-gulp.task('default', ['html', 'less', 'combine-js','log', 'images', 'connect', 'watch']);
+gulp.task('default', ['html', 'less', 'combine-js', 'process-js', 'log', 'images', 'connect', 'watch', 'minify-css']);
