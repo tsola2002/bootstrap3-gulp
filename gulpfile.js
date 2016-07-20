@@ -25,9 +25,9 @@ var env = process.env.NODE_ENV || 'development';
 
 //using a conditional to modify how the output is used
  if (env==='development')  {
-     outputDir = 'builds/development/';
+     outputDir = 'builds/development/public/';
  } else {
-     outputDir = 'builds/production/';
+     outputDir = 'builds/production/public/';
  }
 
 //javascript files that need to be combined

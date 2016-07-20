@@ -1,7 +1,12 @@
-body {
-  background-color: #3456f8;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -ms-flex: auto;
-  flex: auto;
+.header {
+  background-color: #d9534f;
+}
+.sidebar {
+  background-color: #003366;
+}
+.page {
+  background-color: #ffebcd;
+}
+.footer {
+  background-color: #d9534f;
 }
