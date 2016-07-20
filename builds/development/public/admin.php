@@ -8,7 +8,7 @@
     <title></title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,6 +21,6 @@
 
 
 <!-- Jquery & Bootstrap js already combined into one file -->
-<script src="js/bootstrap.js"></script>
+<script src="../js/bootstrap.js"></script>
 </body>
 </html>
