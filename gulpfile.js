@@ -1,7 +1,6 @@
 //use nodejs's require command to bring in gulp library & assign it to a variable called gulp
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
-    browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect'),
     gulpif = require('gulp-if'),
@@ -13,7 +12,7 @@ var gulp = require('gulp'),
     minifyCSS = require('gulp-minify-css'),
     less = require('gulp-less');
 
-//making declaration of neccessary variables that will be used later on
+//making declaration of necessary variables that will be used later on
 var env,
     jsSources,
     lessSources,
@@ -40,22 +39,23 @@ jsSources = [
     'components/js/collapse.js',
     'components/js/dropdown.js',
     'components/js/modal.js',
-    'components/js/popover.js',
+    'components/js/tooltip.js',
     'components/js/scrollspy.js',
     'components/js/tab.js',
-    'components/js/tooltip.js',
-    'components/js/transition.js'
+    'components/js/transition.js',
+    'components/js/popover.js'
 ];
 
 customJsSources = [
     'components/js/custom.js'
 ];
 
-//less files that need to be processed
+
 
 lessSources = [
     'components/less/bootstrap.less',
-    'components/less/custom.less'
+    'components/less/custom.less',
+    'components/less/fontawesome/font-awesome.less'
 ];
 
 //html files that need to be processed
@@ -102,8 +102,6 @@ gulp.task('combine-js', function() {
         //concatenate js file into a bootstrap.js file
         //pipe method will send output of previous function to the function below
         .pipe(concat('bootstrap.js'))
-        //run the browserify plugin & install dependencies
-        .pipe(browserify())
         //use conditional to determine whether to minify the file or not based on the environment settings
         .pipe(gulpif(env === 'production', uglify()))
         //output final file to destination folder
