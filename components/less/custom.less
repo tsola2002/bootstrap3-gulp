@@ -1,7 +1,131 @@
-.bg-image {
-  background-image: url("../images/backgrounds/reptiles.jpg");
-  height: 200px;
-  background-size: cover;
-  background-position: center center;
+@dark-orange: #bf5700;
+@pink: #ff0055;
+@text_blue: #666;
+@light-text: #ccc;
+@light-blue: #6f767a;
+@footer-background: #111111;
+@white: #ffffff;
+
+.navbar{
+  min-height: 90px;
 }
+
+
+nav{
+  #logo{
+    max-height: 95px;
+    margin-top: -25px;
+  }
+}
+
+
+.promo{
+  text-align: center;
+  padding: 50px;
+  background: url("/images/backgrounds/event_background.png") no-repeat;
+  background-size: cover;
+  margin-top: 65px;
+
+  .jumbotron{
+    border-radius: 20px;
+    padding: 50px;
+    background-color: rgba(255,255,255,0.75);
+    max-width: 900px;
+    margin: 0 auto;
+    @media(max-width: 991px) {
+      padding: 20px;
+    }
+
+  }
+
+}
+
+.intro-wrapper{
+  background-color: #eee;
+  .intro{
+    padding: 50px 0;
+    text-align: center;
+
+    h1{
+      margin-bottom: 30px;
+      padding: 50px 0 60px;
+    }
+
+    p{
+      font-size: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+.summary{
+  padding: 50px 0 60px;
+  text-align: center;
+
+  h1{
+    margin-bottom: 30px;
+    padding: 50px 0 60px;
+  }
+
+  p{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+.services-wrapper{
+  background-color: #eff7fb;
+  #our-services{
+
+    text-align: center;
+    padding-bottom: 70px;
+    h2{
+      font-weight: normal;
+      margin-top: 13px;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .item{
+      padding-top: 36px;
+      i{
+        font-size: 40px;
+        color: @pink;
+      }
+      p{
+        color: @light-blue;
+      }
+    }
+  }
+}
+
+.footer-top{
+  padding: 50px;
+}
+
+.footer-bottom-wrapper {
+  color: @white;
+  background-color: @dark-orange;
+  padding: 30px 0 20px 0;
+  .footer-bottom{
+    text-align: center;
+
+  }
+  .copyright{
+    padding-bottom: 10px;
+  }
+  p{
+
+    font-size: 12px;
+    line-height: 5px;
+  }
+}
+
+
+
+
+
+
 

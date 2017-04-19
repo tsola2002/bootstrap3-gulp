@@ -8,6 +8,9 @@
 // Provide a static navbar from which we expand to create full-width, fixed, and
 // other navbar variations.
 
+@dark-orange: #bf5700;
+@white: #ffffff;
+
 .navbar {
   position: relative;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
@@ -549,16 +552,16 @@
 
       &:hover,
       &:focus {
-        color: @navbar-inverse-link-hover-color;
-        background-color: @navbar-inverse-link-hover-bg;
+        color: @white;
+        background-color: @dark-orange;
       }
     }
     > .active > a {
       &,
       &:hover,
       &:focus {
-        color: @navbar-inverse-link-active-color;
-        background-color: @navbar-inverse-link-active-bg;
+        color: @white;
+        background-color: @dark-orange;
       }
     }
     > .disabled > a {

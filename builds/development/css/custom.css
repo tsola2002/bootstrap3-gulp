@@ -1,6 +1,96 @@
-.bg-image {
-  background-image: url("../images/backgrounds/reptiles.jpg");
-  height: 200px;
+.navbar {
+  min-height: 90px;
+}
+nav #logo {
+  max-height: 95px;
+  margin-top: -25px;
+}
+.promo {
+  text-align: center;
+  padding: 50px;
+  background: url("/images/backgrounds/event_background.png") no-repeat;
   background-size: cover;
-  background-position: center center;
+  margin-top: 65px;
+}
+.promo .jumbotron {
+  border-radius: 20px;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.75);
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 991px) {
+  .promo .jumbotron {
+    padding: 20px;
+  }
+}
+.intro-wrapper {
+  background-color: #eee;
+}
+.intro-wrapper .intro {
+  padding: 50px 0;
+  text-align: center;
+}
+.intro-wrapper .intro h1 {
+  margin-bottom: 30px;
+  padding: 50px 0 60px;
+}
+.intro-wrapper .intro p {
+  font-size: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.summary {
+  padding: 50px 0 60px;
+  text-align: center;
+}
+.summary h1 {
+  margin-bottom: 30px;
+  padding: 50px 0 60px;
+}
+.summary p {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.services-wrapper {
+  background-color: #eff7fb;
+}
+.services-wrapper #our-services {
+  text-align: center;
+  padding-bottom: 70px;
+}
+.services-wrapper #our-services h2 {
+  font-weight: normal;
+  margin-top: 13px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.services-wrapper #our-services .item {
+  padding-top: 36px;
+}
+.services-wrapper #our-services .item i {
+  font-size: 40px;
+  color: #ff0055;
+}
+.services-wrapper #our-services .item p {
+  color: #6f767a;
+}
+.footer-top {
+  padding: 50px;
+}
+.footer-bottom-wrapper {
+  color: #ffffff;
+  background-color: #bf5700;
+  padding: 30px 0 20px 0;
+}
+.footer-bottom-wrapper .footer-bottom {
+  text-align: center;
+}
+.footer-bottom-wrapper .copyright {
+  padding-bottom: 10px;
+}
+.footer-bottom-wrapper p {
+  font-size: 12px;
+  line-height: 5px;
 }
