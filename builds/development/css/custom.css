@@ -63,7 +63,7 @@ nav #logo {
 }
 .summary h1 {
   margin-bottom: 30px;
-  padding: 50px 0 30px;
+  padding: 50px 0 20px;
   text-transform: capitalize;
 }
 .summary p {
@@ -108,6 +108,16 @@ nav #logo {
 }
 .footer-top {
   padding: 50px;
+}
+.footer-top .footer-item {
+  max-height: 191px;
+  text-align: center;
+}
+.footer-top .footer-item .sub {
+  line-height: 12px;
+}
+.footer-top .contact-us p {
+  line-height: 12px;
 }
 .footer-bottom-wrapper {
   color: #ffffff;
@@ -157,4 +167,22 @@ EVENT PAGE
 .gallery .item-wrapper a img {
   width: 219px;
   height: 129px;
+}
+/**
+INVENTORY PAGE
+**/
+.list-intro {
+  padding: 50px 0;
+}
+.inventory-gallery {
+  padding-bottom: 50px;
+}
+.inventory-gallery .item-wrapper {
+  padding: 10px 5px;
+}
+.inventory-gallery .item-wrapper h3 {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #333333;
+  text-align: center;
 }
