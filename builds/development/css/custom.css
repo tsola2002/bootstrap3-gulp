@@ -109,6 +109,16 @@ nav #logo {
 .footer-top {
   padding: 50px;
 }
+.footer-top .footer-item {
+  max-height: 191px;
+  text-align: center;
+}
+.footer-top .footer-item .sub {
+  line-height: 12px;
+}
+.footer-top .contact-us p {
+  line-height: 12px;
+}
 .footer-bottom-wrapper {
   color: #ffffff;
   background-color: #bf5700;
