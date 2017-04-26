@@ -2,18 +2,18 @@
   min-height: 65px;
   box-shadow: 1px 1px 3px -1px black;
 }
-.social-media {
-  padding: 20px 0;
-}
-.social-media ul {
-  list-style-type: none;
-}
-.social-media ul li {
-  display: inline-block;
-}
 nav #logo {
   max-height: 65px;
   margin-top: -25px;
+}
+.navbar-nav {
+  margin: 10px 10px 10px 10px;
+}
+.navbar-nav li a {
+  border-radius: 5px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  margin-right: 10px;
 }
 .body-wrapper {
   margin-top: 65px;
@@ -103,11 +103,15 @@ nav #logo {
   color: #ff0055;
 }
 .services-wrapper #our-services .item p {
-  color: #6f767a;
+  color: #301934;
   padding-top: 10px;
 }
 .footer-top {
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+.footer-top .subscribe form button {
+  margin-top: 10px;
 }
 .footer-top .footer-item {
   max-height: 191px;
@@ -118,6 +122,26 @@ nav #logo {
 }
 .footer-top .contact-us p {
   line-height: 12px;
+}
+.footer-top .contact-us h5 {
+  margin-bottom: 5px;
+}
+.footer-top .contact-us .social-media ul {
+  margin-left: -38px;
+  list-style-type: none;
+}
+.footer-top .contact-us .social-media ul li {
+  display: inline-block;
+  margin-right: 5px;
+}
+.footer-top .contact-us .social-media ul li a {
+  color: #bf5700;
+}
+.footer-top .contact-us .social-media ul li a:hover {
+  color: #8c4000;
+}
+.footer-top .contact-us .social-media ul li a i {
+  font-size: 2.2em;
 }
 .footer-bottom-wrapper {
   color: #ffffff;
@@ -142,7 +166,6 @@ EVENT PAGE
 }
 .event-listing h2 {
   text-transform: capitalize;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: #333333;
   padding: 10px 0px;
@@ -185,4 +208,13 @@ INVENTORY PAGE
   font-weight: normal;
   color: #333333;
   text-align: center;
+}
+/**
+CONTACT PAGE
+**/
+.contact {
+  padding: 50px 0;
+}
+.contact .contact-us {
+  padding-bottom: 30px;
 }

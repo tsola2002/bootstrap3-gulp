@@ -1,6 +1,7 @@
 @dark-orange: #bf5700;
 @pink: #ff0055;
 @text_blue: #666;
+@dark-purple: #301934;
 @light-text: #ccc;
 @light-blue: #6f767a;
 @footer-background: #111111;
@@ -15,19 +16,24 @@
   box-shadow: 1px 1px 3px -1px black;
 }
 
-.social-media{
-  padding: 20px 0;
-  ul{
-    list-style-type: none;
-    li{
-      display: inline-block;
-    }
-  }
-}
+
 nav{
   #logo{
     max-height: 65px;
     margin-top: -25px;
+  }
+}
+.navbar-nav{
+  margin: 10px 10px 10px 10px;
+
+  li{
+
+    a{
+      border-radius: 5px;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      margin-right: 10px;
+    }
   }
 }
 
@@ -130,7 +136,7 @@ nav{
         color: @pink;
       }
       p{
-        color: @light-blue;
+        color: @dark-purple;
         padding-top: 10px;
       }
     }
@@ -138,12 +144,22 @@ nav{
 }
 
 .footer-top{
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 
+  .subscribe{
+    form{
+      button{
+        margin-top: 10px;
+      }
+    }
+
+  }
   .footer-item{
     max-height: 191px;
     text-align: center;
-    
+
+
 
    .sub{
      line-height: 12px;
@@ -154,6 +170,29 @@ nav{
      p{
        line-height: 12px;
      }
+     h5{
+       margin-bottom: 5px;
+     }
+     .social-media{
+       //padding: 20px 0;
+       ul{
+         margin-left: -38px;
+         list-style-type: none;
+         li{
+           display: inline-block;
+           margin-right: 5px;
+           a{
+             color: @dark-orange;
+             &:hover{
+                color: darken(@dark-orange, 10%);
+              }
+             i{
+               font-size: 2.2em;
+             }
+           }
+         }
+       }
+     }
    }
 }
 
@@ -161,6 +200,7 @@ nav{
   color: @white;
   background-color: @dark-orange;
   padding: 30px 0 20px 0;
+
   .footer-bottom{
     text-align: center;
 
@@ -187,7 +227,7 @@ EVENT PAGE
   }
   h2{
     text-transform: capitalize;
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    //font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     color: @gray-dark;
     padding: 10px 0px;
@@ -242,6 +282,19 @@ INVENTORY PAGE
     }
   }
 
+}
+
+/**
+CONTACT PAGE
+**/
+
+.contact{
+  padding: 50px 0;
+
+  .contact-us{
+    padding-bottom: 30px;
+
+  }
 }
 
 
