@@ -12,6 +12,8 @@
 @subtle-grey: #f4f4f4;
 @subtle-grey-border: #e2e2e2;
 @ui-blue: #0a8cc9;
+@darker-purple: #5a2e62;
+@light-purple: rgba(233, 222, 238, 0.28);
 
 
 .navbar{
@@ -46,7 +48,7 @@ nav{
 .promo{
   text-align: center;
   padding: 50px;
-  background: url("../images/backgrounds/event_background.png") no-repeat;
+  background: url("../images/assets/dining_table.jpg") no-repeat;
   background-size: cover;
 
   .jumbotron{
@@ -63,12 +65,17 @@ nav{
       padding: 20px;
     }
 
+    button{
+        background: @darker-purple;
+        border-color: darken(@darker-purple, 20%);
+    }
+
   }
 
 }
 
 .intro-wrapper{
-  background-color: #eee;
+  background-color: @light-purple;
   .intro{
     padding: 50px 0;
     text-align: center;
@@ -106,7 +113,7 @@ nav{
 }
 
 .services-wrapper{
-  background-color: #eff7fb;
+  background-color: @light-purple;
   #our-services{
     text-align: center;
     padding-bottom: 70px;
@@ -272,6 +279,12 @@ INVENTORY PAGE
 
 .list-intro{
   padding: 50px 0;
+
+  .intro-text{
+    h2{
+      margin-top: 0;
+    }
+  }
 }
 
 .inventory-gallery {
@@ -342,6 +355,36 @@ CALENDAR PAGE
 
   }
 }
+
+/**
+AFFILIATIONS PAGE
+**/
+
+.affiliation-sponsors {
+  h1{
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  padding: 50px 0 50px 0;
+  .item-wrapper{
+    padding: 10px 0;
+    text-align: center;
+    img{
+      width: 189px;
+      height: 118px;
+      display: inline-block;
+    }
+    h3{
+      font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      color: @gray-dark;
+      //text-align: center;
+    }
+  }
+
+}
+
+
 
 
 

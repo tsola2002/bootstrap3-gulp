@@ -21,7 +21,7 @@ nav #logo {
 .promo {
   text-align: center;
   padding: 50px;
-  background: url("../images/backgrounds/event_background.png") no-repeat;
+  background: url("../images/assets/dining_table.jpg") no-repeat;
   background-size: cover;
 }
 .promo .jumbotron {
@@ -40,8 +40,12 @@ nav #logo {
     padding: 20px;
   }
 }
+.promo .jumbotron button {
+  background: #5a2e62;
+  border-color: #1a0d1d;
+}
 .intro-wrapper {
-  background-color: #eee;
+  background-color: rgba(233, 222, 238, 0.28);
 }
 .intro-wrapper .intro {
   padding: 50px 0;
@@ -72,7 +76,7 @@ nav #logo {
   margin-bottom: 20px;
 }
 .services-wrapper {
-  background-color: #eff7fb;
+  background-color: rgba(233, 222, 238, 0.28);
 }
 .services-wrapper #our-services {
   text-align: center;
@@ -198,6 +202,9 @@ INVENTORY PAGE
 .list-intro {
   padding: 50px 0;
 }
+.list-intro .intro-text h2 {
+  margin-top: 0;
+}
 .inventory-gallery {
   padding-bottom: 50px;
 }
@@ -252,4 +259,28 @@ CALENDAR PAGE
 .calendar-listing .date {
   color: #bf5700;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/**
+AFFILIATIONS PAGE
+**/
+.affiliation-sponsors {
+  padding: 50px 0 50px 0;
+}
+.affiliation-sponsors h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.affiliation-sponsors .item-wrapper {
+  padding: 10px 0;
+  text-align: center;
+}
+.affiliation-sponsors .item-wrapper img {
+  width: 189px;
+  height: 118px;
+  display: inline-block;
+}
+.affiliation-sponsors .item-wrapper h3 {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #333333;
 }
