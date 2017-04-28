@@ -284,3 +284,29 @@ AFFILIATIONS PAGE
   font-weight: normal;
   color: #333333;
 }
+/**
+ANNOUNCEMENT PAGE
+**/
+.announcement-top {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.anouncements {
+  padding: 50px 0;
+}
+.anouncements .sidebar .panel-default {
+  border-color: #bf5700;
+}
+.anouncements .sidebar .panel {
+  border: 1px solid #bf5700;
+}
+.anouncements .sidebar .panel .panel-heading {
+  background: #bf5700;
+  border-color: #bf5700;
+}
+.anouncements .sidebar .panel .panel-heading h4 {
+  color: white;
+}
+.anouncements .news-listing .list-items {
+  padding-bottom: 40px;
+}
