@@ -226,6 +226,9 @@ CONTACT PAGE
 .contact .contact-us {
   padding-bottom: 30px;
 }
+.contact .map-location .address {
+  padding-top: 20px;
+}
 /**
 CALENDAR PAGE
 **/
