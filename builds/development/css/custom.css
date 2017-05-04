@@ -2,9 +2,15 @@
   min-height: 65px;
   box-shadow: 1px 1px 3px -1px black;
 }
-nav #logo {
-  max-height: 65px;
-  margin-top: -25px;
+.navbar-brand {
+  background: url("../images/assets/event_logo.jpg");
+  background-repeat: no-repeat;
+  width: 200px;
+  height: auto;
+  background-position: 15px 0;
+}
+.navbar-brand h1 {
+  font-size: 16px;
 }
 .navbar-nav {
   margin: 10px 10px 10px 10px;
@@ -21,7 +27,7 @@ nav #logo {
 .promo {
   text-align: center;
   padding: 50px;
-  background: url("../images/assets/dining_table.jpg") no-repeat;
+  background: url("../images/assets/bouquet-table.jpg") no-repeat;
   background-size: cover;
 }
 .promo .jumbotron {
@@ -166,8 +172,8 @@ nav #logo {
 /**
 EVENT PAGE
 **/
-.event-listing .listing {
-  padding-top: 59px;
+.events {
+  text-align: center;
 }
 .event-listing h2 {
   text-transform: capitalize;
