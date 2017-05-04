@@ -30,6 +30,12 @@
   padding-bottom: 11px;
   margin-right: 10px;
 }
+body {
+  position: relative;
+  min-height: 1000px;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
 .body-wrapper {
   margin-top: 65px;
 }
@@ -167,6 +173,9 @@
   color: #ffffff;
   background-color: #bf5700;
   padding: 30px 0 20px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100% !important;
 }
 .footer-bottom-wrapper .footer-bottom {
   text-align: center;
@@ -285,6 +294,7 @@ AFFILIATIONS PAGE
   padding: 50px 0 50px 0;
 }
 .affiliation-sponsors h1 {
+  margin-top: 0;
   text-align: center;
   padding-bottom: 30px;
 }
