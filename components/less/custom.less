@@ -15,6 +15,10 @@
 @darker-purple: #5a2e62;
 @light-purple: rgba(233, 222, 238, 0.28);
 
+html, body{
+  height: 100%;
+  overflow-x: hidden;
+}
 
 .navbar{
   min-height: 65px;
@@ -42,7 +46,7 @@
       font-size: 0.5em;
       display: block;
       font-weight: normal;
-      color: @pink;
+      color: @dark-purple;
     }
   }
 }
@@ -60,14 +64,9 @@
     }
   }
 }
-body {
-  position: relative;;
-  min-height: 1000px;
-  padding-bottom: 50px;
-  overflow-x: hidden;
-}
 .body-wrapper {
   margin-top: 65px;
+  min-height: 83%;
 }
 .promo{
   text-align: center;
@@ -89,6 +88,11 @@ body {
       padding: 20px;
     }
 
+    p{
+      max-height: 102px;
+      overflow-y: hidden;
+    }
+
     button{
         background: @darker-purple;
         border-color: darken(@darker-purple, 20%);
@@ -106,7 +110,7 @@ body {
 
     h1{
       margin-bottom: 30px;
-      padding: 40px 0 30px;
+      padding: 0px 0 30px;
       text-transform: capitalize;
     }
 
@@ -114,18 +118,26 @@ body {
       font-size: 20px;
       max-width: 900px;
       margin: 0 auto;
+      max-height: 86px;
+      overflow-y: hidden;
     }
   }
 }
 
 
 .summary{
-  padding: 50px 0 50px;
+  padding: 22px 0 50px 0;
   text-align: center;
+
+  .summary-text{
+    max-height: 172px;
+    overflow-y: hidden;
+    text-align: justify;
+  }
 
   h1{
     margin-bottom: 30px;
-    padding: 50px 0 20px;
+    padding: 20px 0 20px;
     text-transform: capitalize;
   }
 
@@ -172,6 +184,10 @@ body {
       p{
         color: @dark-purple;
         padding-top: 10px;
+        text-align: left;
+        max-width: 219px;
+        margin: 0 auto;
+        overflow-y: hidden;
       }
     }
   }
@@ -190,13 +206,23 @@ body {
 
   }
   .footer-item{
-    max-height: 191px;
+    max-height: 186px;
     text-align: center;
+    overflow-y: hidden;
 
+    h2{
+      text-align: left;
+    }
+
+    p{
+      width: 230px;
+      text-align: left;
+    }
 
 
    .sub{
      line-height: 12px;
+
    }
     
   }
@@ -235,9 +261,9 @@ body {
   color: @white;
   background-color: @dark-orange;
   padding: 30px 0 20px 0;
-  position: absolute;
-  bottom: 0;
-  width: 100% !important;
+//  position: absolute;
+//  bottom: 0;
+//  width: 100% !important;
 
   .footer-bottom{
     text-align: center;
@@ -260,26 +286,43 @@ EVENT PAGE
 
 .events{
   text-align: center;
+  h2{
+    padding: 10px 0;
+  }
 }
 
 .event-listing{
 
   .listing{
     //padding-top: 59px;
+    margin-top: -10px;
+
   }
   h2{
     text-transform: capitalize;
     //font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     color: @gray-dark;
-    padding: 10px 0px;
-    text-align: center;
+    //padding: 10px 0px;
+    padding-left: 20px;
     border: 1px dotted @dark-orange;
     font-weight: normal;
     border-left-style: solid;
     border-left-width: 10px;
+
     //border-right-style: solid;
     //border-right-width: 10px;
+
+    a{
+      display: block;
+      text-decoration: none;
+      color: @dark-purple;
+      &:hover{
+        background: @dark-orange;
+        color: #ffffff;
+      }
+    }
+
   }
 }
 
@@ -288,11 +331,15 @@ EVENT PAGE
   padding-bottom: 50px;
   .item{
     padding: 10px 5px;
+
   }
   h2{
     text-align: center;
     font-weight: normal;
     color: @gray-dark;
+    a{
+
+    }
   }
   .item-wrapper{
     a{
@@ -312,8 +359,11 @@ INVENTORY PAGE
   padding: 50px 0;
 
   .intro-text{
+    overflow-y: hidden;
+    max-height: 212px;
     h2{
       margin-top: 0;
+
     }
   }
 }
@@ -346,11 +396,24 @@ CONTACT PAGE
   .map-location{
 
     #map{
-
+      iframe{
+        height: 334px;
+      }
     }
     .address{
       padding-top: 20px;
+
+      h2{
+        display: inline-block;
+        border-bottom: 1px solid @dark-purple;
+        padding: 10px 0;
+        width: 200px;
+      }
     }
+  }
+
+  .well{
+    padding: 25px;
   }
 }
 

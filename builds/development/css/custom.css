@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
 .navbar {
   min-height: 65px;
   box-shadow: 1px 1px 3px -1px black;
@@ -19,7 +24,7 @@
   font-size: 0.5em;
   display: block;
   font-weight: normal;
-  color: #ff0055;
+  color: #301934;
 }
 .navbar-nav {
   margin: 10px 10px 10px 10px;
@@ -30,14 +35,9 @@
   padding-bottom: 11px;
   margin-right: 10px;
 }
-body {
-  position: relative;
-  min-height: 1000px;
-  padding-bottom: 50px;
-  overflow-x: hidden;
-}
 .body-wrapper {
   margin-top: 65px;
+  min-height: 83%;
 }
 .promo {
   text-align: center;
@@ -61,6 +61,10 @@ body {
     padding: 20px;
   }
 }
+.promo .jumbotron p {
+  max-height: 102px;
+  overflow-y: hidden;
+}
 .promo .jumbotron button {
   background: #5a2e62;
   border-color: #1a0d1d;
@@ -74,21 +78,28 @@ body {
 }
 .intro-wrapper .intro h1 {
   margin-bottom: 30px;
-  padding: 40px 0 30px;
+  padding: 0px 0 30px;
   text-transform: capitalize;
 }
 .intro-wrapper .intro p {
   font-size: 20px;
   max-width: 900px;
   margin: 0 auto;
+  max-height: 86px;
+  overflow-y: hidden;
 }
 .summary {
-  padding: 50px 0 50px;
+  padding: 22px 0 50px 0;
   text-align: center;
+}
+.summary .summary-text {
+  max-height: 172px;
+  overflow-y: hidden;
+  text-align: justify;
 }
 .summary h1 {
   margin-bottom: 30px;
-  padding: 50px 0 20px;
+  padding: 20px 0 20px;
   text-transform: capitalize;
 }
 .summary p {
@@ -130,6 +141,10 @@ body {
 .services-wrapper #our-services .item p {
   color: #301934;
   padding-top: 10px;
+  text-align: left;
+  max-width: 219px;
+  margin: 0 auto;
+  overflow-y: hidden;
 }
 .footer-top {
   padding-top: 50px;
@@ -139,8 +154,16 @@ body {
   margin-top: 27px;
 }
 .footer-top .footer-item {
-  max-height: 191px;
+  max-height: 186px;
   text-align: center;
+  overflow-y: hidden;
+}
+.footer-top .footer-item h2 {
+  text-align: left;
+}
+.footer-top .footer-item p {
+  width: 230px;
+  text-align: left;
 }
 .footer-top .footer-item .sub {
   line-height: 12px;
@@ -173,9 +196,6 @@ body {
   color: #ffffff;
   background-color: #bf5700;
   padding: 30px 0 20px 0;
-  position: absolute;
-  bottom: 0;
-  width: 100% !important;
 }
 .footer-bottom-wrapper .footer-bottom {
   text-align: center;
@@ -193,16 +213,30 @@ EVENT PAGE
 .events {
   text-align: center;
 }
+.events h2 {
+  padding: 10px 0;
+}
+.event-listing .listing {
+  margin-top: -10px;
+}
 .event-listing h2 {
   text-transform: capitalize;
   font-size: 18px;
   color: #333333;
-  padding: 10px 0px;
-  text-align: center;
+  padding-left: 20px;
   border: 1px dotted #bf5700;
   font-weight: normal;
   border-left-style: solid;
   border-left-width: 10px;
+}
+.event-listing h2 a {
+  display: block;
+  text-decoration: none;
+  color: #301934;
+}
+.event-listing h2 a:hover {
+  background: #bf5700;
+  color: #ffffff;
 }
 .gallery {
   text-align: center;
@@ -225,6 +259,10 @@ INVENTORY PAGE
 **/
 .list-intro {
   padding: 50px 0;
+}
+.list-intro .intro-text {
+  overflow-y: hidden;
+  max-height: 212px;
 }
 .list-intro .intro-text h2 {
   margin-top: 0;
@@ -250,8 +288,20 @@ CONTACT PAGE
 .contact .contact-us {
   padding-bottom: 30px;
 }
+.contact .map-location #map iframe {
+  height: 334px;
+}
 .contact .map-location .address {
   padding-top: 20px;
+}
+.contact .map-location .address h2 {
+  display: inline-block;
+  border-bottom: 1px solid #301934;
+  padding: 10px 0;
+  width: 200px;
+}
+.contact .well {
+  padding: 25px;
 }
 /**
 CALENDAR PAGE
