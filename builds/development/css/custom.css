@@ -4,7 +4,7 @@ body {
   overflow-x: hidden;
 }
 .text-shadow {
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
 }
 .navbar {
   min-height: 65px;
@@ -100,6 +100,14 @@ body {
   overflow-y: hidden;
   text-align: justify;
 }
+.summary .summary-img {
+  width: 500px;
+  overflow: hidden;
+}
+.summary .summary-img img {
+  width: 500px;
+  overflow: hidden;
+}
 .summary h1 {
   margin-bottom: 30px;
   padding: 20px 0 20px;
@@ -131,7 +139,15 @@ body {
   padding-top: 36px;
 }
 .services-wrapper #our-services .item h2 {
-  color: #111111;
+  color: #ffffff;
+  text-align: center;
+  /* padding-left: 20px; */
+  background-color: #17052b;
+  padding: 5px 0;
+  border-radius: 4px;
+  font-size: 122%;
+  font-weight: bold;
+  margin: 10px 25px;
 }
 .services-wrapper #our-services .item img {
   width: 219px;

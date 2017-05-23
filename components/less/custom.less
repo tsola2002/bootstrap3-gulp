@@ -2,6 +2,7 @@
 @pink: #ff0055;
 @text_blue: #666;
 @dark-purple: #301934;
+@background-purple: #17052b;
 @light-text: #ccc;
 @light-blue: #6f767a;
 @footer-background: #111111;
@@ -21,7 +22,7 @@ html, body{
 }
 
 .text-shadow{
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 .navbar{
@@ -139,6 +140,16 @@ html, body{
     text-align: justify;
   }
 
+  .summary-img{
+    width: 500px;
+    overflow: hidden;
+
+    img{
+      width: 500px;
+      overflow: hidden;
+    }
+  }
+
   h1{
     margin-bottom: 30px;
     padding: 20px 0 20px;
@@ -173,7 +184,15 @@ html, body{
       padding-top: 36px;
 
       h2{
-        color: @footer-background;
+        color: @white;
+        text-align: center;
+        /* padding-left: 20px; */
+        background-color: @background-purple;
+        padding: 5px 0;
+        border-radius: 4px;
+        font-size: 122%;
+        font-weight: bold;
+        margin: 10px 25px;
       }
 
       img{
